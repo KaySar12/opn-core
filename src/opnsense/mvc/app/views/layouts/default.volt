@@ -17,7 +17,7 @@
     {% set theme_name = ui_theme|default('opnsense') %}
 
     <!-- Favicon -->
-    <link href="{{ cache_safe('/ui/themes/%s/build/images/favicon.png' | format(theme_name)) }}" rel="shortcut icon">
+    <link href="{{ cache_safe('/ui/themes/%s/build/images/NextFirewall.png' | format(theme_name)) }}" rel="shortcut icon">
 
     <!-- css imports -->
     {% for filename in css_files -%}
@@ -293,8 +293,7 @@
         <!-- page footer -->
         <footer class="page-foot">
           <div class="container-fluid">
-            <a target="_blank" href="{{ product_website }}">{{ product_name }}</a> (c) {{ product_copyright_years }}
-            <a target="_blank" href="{{ product_copyright_url }}">{{ product_copyright_owner }}</a>
+
           </div>
         </footer>
       </div>

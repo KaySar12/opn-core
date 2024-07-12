@@ -5,7 +5,7 @@
             <Root url="/" visibility="hidden"/>
             <RootArgs url="/?*" visibility="hidden"/>
         </Dashboard>
-        <License order="1" url="/ui/core/license" cssClass="fa fa-balance-scale fa-fw"/>
+        <!-- <License order="1" url="/ui/core/license" cssClass="fa fa-balance-scale fa-fw"/> -->
         <Password order="2" url="/system_usermanager_passwordmg.php" cssClass="fa fa-key fa-fw">
             <Edit url="/system_usermanager_passwordmg.php*" visibility="hidden"/>
         </Password>
@@ -36,7 +36,7 @@
             <Defaults url="/diag_defaults.php"/>
             <History url="/ui/core/backup/history/this"/>
         </Configuration>
-        <Firmware cssClass="fa fa-building-o fa-fw">
+        <!-- <Firmware cssClass="fa fa-building-o fa-fw">
             <Status order="10" url="/ui/core/firmware#status"/>
             <Settings order="20" url="/ui/core/firmware#settings"/>
             <Changelog order="30" url="/ui/core/firmware#changelog"/>
@@ -45,7 +45,7 @@
             <Packages order="60" url="/ui/core/firmware#packages"/>
             <Reporter order="70" url="/crash_reporter.php"/>
             <LogFile order="80" VisibleName="Log File" url="/ui/diagnostics/log/core/pkg"/>
-        </Firmware>
+        </Firmware> -->
         <Gateways cssClass="fa fa-location-arrow fa-fw">
             <Configuration order="10" url="/ui/routing/configuration"/>
             <Group order="20" url="/system_gateway_groups.php">
@@ -202,9 +202,9 @@
         <Reboot order="10" url="/ui/core/reboot" cssClass="fa fa-repeat fa-fw"/>
         <PowerOff VisibleName="Power Off" order="20" url="/ui/core/halt" cssClass="fa fa-power-off fa-fw"/>
     </Power>
-    <Help order="80" cssClass="fa fa-support">
-        <Documentation order="10" url="https://docs.opnsense.org/" cssClass="fa fa-book" IsExternal="Y"/>
+    <!-- <Help order="80" cssClass="fa fa-support">
+        <Documentation order="10" url="https://doc.nextzenos.com/howtouse/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-s%E1%BB%AD-d%E1%BB%A5ng-theo-t%C3%ADnh-n%C4%83ng/nextzen-router.html" cssClass="fa fa-book" IsExternal="Y"/>
         <Forum VisibleName="User Forum" order="20" url="https://forum.opnsense.org/" cssClass="fa fa-ticket" IsExternal="Y"/>
-        <Support VisibleName="Commercial Support" order="30" url="https://opnsense.org/support-overview/commercial-support/" cssClass="fa fa-phone" IsExternal="Y"/>
-    </Help>
+        <Support VisibleName="Contact us" order="30" url="https://opnsense.org/support-overview/commercial-support/" cssClass="fa fa-phone" IsExternal="Y"/>
+    </Help> -->
 </menu>
