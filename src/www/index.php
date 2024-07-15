@@ -249,7 +249,7 @@ include("fbegin.inc");?>
                 }
             });
             // schedule next update
-            setTimeout('process_widget_data()', 5000);
+            setTimeout('process_widget_data()', 1000);
       });
   }
 </script>

@@ -427,9 +427,7 @@ function display_login_form($Login_Error)
         <!--<a target="_blank" href="<?= $product->website() ?>"><?= $product->name() ?></a> (c) <?= $product->copyright_years() ?>
         <a target="_blank" href="<?= $product->copyright_url() ?>"><?= $product->copyright_owner() ?></a>-->
       </div>
-
     </div>
-
     </body>
   </html>
 <?php }

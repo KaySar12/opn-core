@@ -70,6 +70,8 @@ system_information_widget_cpu_chart_data.datum([{
 /**
    * update widget
    */
+counter = 0;
+let areAllDisksShown = false;
 function system_information_widget_update(sender, data) { // update cpu usage chart
 system_information_widget_cpu_update(sender, data);
 
@@ -131,9 +133,16 @@ $("#system_information_widget_swap_info").hide();
 }
 
 // disk usage
-counter = 0;
+
+updateDiskDisplay(data, counter, areAllDisksShown);
+}
+function updateDiskDisplay(data, counter, areAllDisksShown) {
+debugger;
+counter = 0; // Reset counter at the beginning of each update
 $("#system_information_widget_disk .disk_devices").html("");
-data['disk']['devices'].map(function (device) {
+
+data['disk']['devices'].forEach(function (device) {
+if (counter <= 2 || areAllDisksShown) {
 var html = $("#system_information_widget_disk .disk_template").html();
 html = html.replace('disk_id_sequence', 'system_information_widget_disk_' + counter);
 $("#system_information_widget_disk .disk_devices").html($("#system_information_widget_disk .disk_devices").html() + html);
@@ -142,6 +151,7 @@ $("#system_information_widget_disk_" + counter + ' .progress-bar').css("width", 
 var disk_text = device['capacity'] + ' ' + device['mountpoint'] + ' [' + device['type'] + '] (' + device['used'] + '/' + device['size'] + ')';
 $("#system_information_widget_disk_" + counter + " .state_text").html(disk_text);
 counter += 1;
+}
 });
 if (counter != 0) {
 $("#system_information_widget_disk_info").show();
@@ -149,7 +159,11 @@ $("#system_information_widget_disk_info").show();
 $("#system_information_widget_disk_info").hide();
 }
 }
-
+function toggleDisplay() {
+areAllDisksShown = ! areAllDisksShown;
+var iconClass = areAllDisksShown ? "fa-minus" : "fa-plus";
+document.getElementById("toggleDiskButton").innerHTML = '<i class="fa ' + iconClass + ' fa-fw"></i>';
+};
 /**
    * page setup
    */
@@ -180,18 +194,17 @@ system_information_widget_cpu_chart_data.transition().duration(500).call(system_
       <td><?= $config['system']['hostname'] . "." . $config['system']['domain']; ?></td>
     </tr>
     <!-- 
-         <tr>
-          <td><?= gettext("Versions"); ?></td>
-          <td id="system_information_widget_versions"></td>
-        </tr> 
-    
-        <tr>
-          <td><?= gettext('Updates') ?></td>
-          <td>
-            <a href='/ui/core/firmware#checkupdate'><span id="system_information_widget_firmware"><?= gettext('Retrieving internal update status...') ?></span></a>
-          </td>
-        </tr> 
-    -->
+tr>
+<td><?= gettext("Versions"); ?></td>
+<td id="system_information_widget_versions"></td>
+tr> 
+r>
+d><?= gettext('Updates') ?></td>
+d>
+ href='/ui/core/firmware#checkupdate'><span id="system_information_widget_firmware"><?= gettext('Retrieving internal update status...') ?></span></a>
+/td>
+tr> 
+ -->
     <tr>
       <td><?= gettext("CPU type"); ?></td>
       <td id="system_information_widget_cpu_type"></td>
@@ -272,7 +285,13 @@ system_information_widget_cpu_chart_data.transition().duration(500).call(system_
       </td>
     </tr>
     <tr id="system_information_widget_disk_info">
-      <td><?= gettext("Disk usage"); ?></td>
+      <td>
+        <?= gettext("Disk usage"); ?>
+        <button id="toggleDiskButton" type="button" class="btn btn-default btn-xs" title="show" onclick="toggleDisplay()">
+          <i class="fa fa-plus fa-fw"></i>
+        </button>
+        <i class="fa fa-spinner fa-pulse" style="display:none"></i>
+      </td>
       <td id="system_information_widget_disk">
         <div
           style="display:none" class="disk_template">
