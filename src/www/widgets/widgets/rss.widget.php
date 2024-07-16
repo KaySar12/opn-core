@@ -173,6 +173,6 @@ if (!empty($config['widgets']['rsswidgettextlength']) && is_numeric($config['wid
 <!-- needed to display the widget settings menu -->
 <script>
 //<![CDATA[
-
+  $("#rss-configure").removeClass("disabled");
 //]]>
 </script>
