@@ -70,7 +70,7 @@ system_information_widget_cpu_chart_data.datum([{
 /**
    * update widget
    */
-counter = 0;
+let counter = 0;
 let areAllDisksShown = false;
 function system_information_widget_update(sender, data) { // update cpu usage chart
 system_information_widget_cpu_update(sender, data);
@@ -113,24 +113,24 @@ $("#system_information_widget_memory .state_text").html(mem_text);
 
 
 // swap usage
-let counter = 0;
-$("#system_information_widget_swap .swap_devices").html("");
-data['disk']['swap'].map(function (swap) {
-var html = $("#system_information_widget_swap .swap_template").html();
-html = html.replace('swap_id_sequence', 'system_information_widget_swap_' + counter);
-$("#system_information_widget_swap .swap_devices").html($("#system_information_widget_swap .swap_devices").html() + html);
-var swap_perc = parseInt(swap['used'] * 100 / swap['total']);
-$("#system_information_widget_swap_" + counter + ' .progress-bar').css("width", swap_perc + "%").attr("aria-valuenow", swap_perc + "%");
-var swap_text = swap_perc + " % " + "( " + parseInt(swap['used'] / 1024) + "/";
-swap_text += parseInt(swap['total'] / 1024) + " MB )";
-$("#system_information_widget_swap_" + counter + " .state_text").html(swap_text);
-counter += 1;
-});
-if (counter != 0) {
-$("#system_information_widget_swap_info").show();
-} else {
-$("#system_information_widget_swap_info").hide();
-}
+// let counter = 0;
+// $("#system_information_widget_swap .swap_devices").html("");
+// data['disk']['swap'].map(function (swap) {
+// var html = $("#system_information_widget_swap .swap_template").html();
+// html = html.replace('swap_id_sequence', 'system_information_widget_swap_' + counter);
+// $("#system_information_widget_swap .swap_devices").html($("#system_information_widget_swap .swap_devices").html() + html);
+// var swap_perc = parseInt(swap['used'] * 100 / swap['total']);
+// $("#system_information_widget_swap_" + counter + ' .progress-bar').css("width", swap_perc + "%").attr("aria-valuenow", swap_perc + "%");
+// var swap_text = swap_perc + " % " + "( " + parseInt(swap['used'] / 1024) + "/";
+// swap_text += parseInt(swap['total'] / 1024) + " MB )";
+// $("#system_information_widget_swap_" + counter + " .state_text").html(swap_text);
+// counter += 1;
+// });
+// if (counter != 0) {
+// $("#system_information_widget_swap_info").show();
+// } else {
+// $("#system_information_widget_swap_info").hide();
+// }
 
 // disk usage
 
@@ -190,20 +190,21 @@ system_information_widget_cpu_chart_data.transition().duration(500).call(system_
   <tbody>
     <tr>
       <td style="width:30%"><?= gettext("Name"); ?></td>
-      <td><?= $config['system']['hostname'] . "." . $config['system']['domain']; ?></td>
+      <!--  <td><?= $config['system']['hostname'] . "." . $config['system']['domain']; ?></td> -->
+      <td>NextFirewall</td>
     </tr>
     <!-- 
-tr>
-<td><?= gettext("Versions"); ?></td>
-<td id="system_information_widget_versions"></td>
-tr> 
-r>
-d><?= gettext('Updates') ?></td>
-d>
- href='/ui/core/firmware#checkupdate'><span id="system_information_widget_firmware"><?= gettext('Retrieving internal update status...') ?></span></a>
-/td>
-tr> 
- -->
+            tr>
+            <td><?= gettext("Versions"); ?></td>
+            <td id="system_information_widget_versions"></td>
+            tr> 
+            r>
+            d><?= gettext('Updates') ?></td>
+            d>
+             href='/ui/core/firmware#checkupdate'><span id="system_information_widget_firmware"><?= gettext('Retrieving internal update status...') ?></span></a>
+            /td>
+            tr> 
+             -->
     <tr>
       <td><?= gettext("CPU type"); ?></td>
       <td id="system_information_widget_cpu_type"></td>
@@ -268,21 +269,21 @@ tr>
         </div>
       </td>
     </tr>
-    <tr id="system_information_widget_swap_info">
-      <td><?= gettext("SWAP usage"); ?></td>
-      <td id="system_information_widget_swap">
-        <div
-          style="display:none" class="swap_template">
-          <!-- template -->
-          <div id="swap_id_sequence" class="progress" style="text-align:center;">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; z-index: 0;"></div>
-            <span class="state_text" style="position:absolute;right:0;left:0;"></span>
-          </div>
-          <div style="height:1px;"></div>
-        </div>
-        <div class="swap_devices"></div>
-      </td>
-    </tr>
+    <!-- <tr id="system_information_widget_swap_info">
+          <td><?= gettext("SWAP usage"); ?></td>
+          <td id="system_information_widget_swap">
+            <div
+              style="display:none" class="swap_template">
+            
+              <div id="swap_id_sequence" class="progress" style="text-align:center;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; z-index: 0;"></div>
+                <span class="state_text" style="position:absolute;right:0;left:0;"></span>
+              </div>
+              <div style="height:1px;"></div>
+            </div>
+            <div class="swap_devices"></div>
+          </td>
+        </tr>-->
     <tr id="system_information_widget_disk_info">
       <td>
         <?= gettext("Disk usage"); ?>

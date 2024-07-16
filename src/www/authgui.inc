@@ -384,7 +384,7 @@ function display_login_form($Login_Error)
 
   <div class="container">
     <main class="login-modal-container">
-      <header class="login-modal-head" style="height:50px;">
+      <header class="login-modal-head" style="height:50px;background:#162951">
         <div class="navbar-brand">
     <?php if (get_themed_filename('/images/default-logo.svg', true)) : ?>
           <img src="<?= cache_safe(get_themed_filename('/images/default-logo.svg')) ?>" height="50" alt="logo" />
