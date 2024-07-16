@@ -387,9 +387,9 @@ function display_login_form($Login_Error)
       <header class="login-modal-head" style="height:50px;">
         <div class="navbar-brand">
     <?php if (get_themed_filename('/images/default-logo.svg', true)) : ?>
-          <img src="<?= cache_safe(get_themed_filename('/images/default-logo.svg')) ?>" height="30" alt="logo" />
+          <img src="<?= cache_safe(get_themed_filename('/images/default-logo.svg')) ?>" height="50" alt="logo" />
     <?php else : ?>
-          <img src="<?= cache_safe(get_themed_filename('/images/default-logo.png')) ?>" height="30" alt="logo" />
+          <img src="<?= cache_safe(get_themed_filename('/images/default-logo.png')) ?>" height="50" alt="logo" />
     <?php endif ?>
         </div>
       </header>

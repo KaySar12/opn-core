@@ -5842,7 +5842,8 @@ body {
     padding-top: 0 !important; } }
 
 .page-login {
-  background-image: url("../../build/images/default_wallpaper.jpg");
+  background: url(../../build/images/default_wallpaper.jpg) no-repeat;
+  background-size: cover;
 }
   .page-login .container {
     min-height: 100%;

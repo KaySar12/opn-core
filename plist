@@ -2134,7 +2134,7 @@
 /usr/local/www/widgets/widgets/ntp_status.widget.php
 /usr/local/www/widgets/widgets/openvpn.widget.php
 /usr/local/www/widgets/widgets/picture.widget.php
-/usr/local/www/widgets/widgets/rss.widget.php
+# /usr/local/www/widgets/widgets/rss.widget.php
 /usr/local/www/widgets/widgets/services_status.widget.php
 /usr/local/www/widgets/widgets/system_information.widget.php
 /usr/local/www/widgets/widgets/system_log.widget.php

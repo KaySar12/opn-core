@@ -289,7 +289,8 @@ div.content-box.wizard {
 }
 
 .page-login {
-  background-image: url("../../build/images/default_wallpaper.jpg");
+  background: url(../../build/images/default_wallpaper.jpg) no-repeat;
+  background-size: cover;
   .container {
     min-height: 100%;
     margin-bottom: -60px;

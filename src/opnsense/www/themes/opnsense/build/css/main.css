@@ -6844,7 +6844,8 @@ div.content-box.wizard div img {
 }
 
 .page-login {
-  background-image: url("../../build/images/default_wallpaper.jpg");
+  background: url(../../build/images/default_wallpaper.jpg) no-repeat;
+  background-size: cover;
 }
 .page-login .container {
   min-height: 100%;
@@ -6859,11 +6860,13 @@ div.content-box.wizard div img {
 }
 
 .login-modal-container {
-  background: #FFF;
-  border: 1px solid #E5E5E5;
+  color: #e4aa24;
+  border: none;
   max-width: 400px;
-  margin: 100px auto 15px auto;
+  margin: 250px auto 0px auto;
+  background-color: #162951;
 }
+
 .login-modal-head {
   background: #3C3C3B;
   height: 75px;

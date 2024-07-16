@@ -137,12 +137,11 @@ $("#system_information_widget_swap_info").hide();
 updateDiskDisplay(data, counter, areAllDisksShown);
 }
 function updateDiskDisplay(data, counter, areAllDisksShown) {
-debugger;
 counter = 0; // Reset counter at the beginning of each update
 $("#system_information_widget_disk .disk_devices").html("");
 
 data['disk']['devices'].forEach(function (device) {
-if (counter <= 2 || areAllDisksShown) {
+if (counter < 1 || areAllDisksShown) {
 var html = $("#system_information_widget_disk .disk_template").html();
 html = html.replace('disk_id_sequence', 'system_information_widget_disk_' + counter);
 $("#system_information_widget_disk .disk_devices").html($("#system_information_widget_disk .disk_devices").html() + html);

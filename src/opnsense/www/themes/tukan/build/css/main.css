@@ -4016,7 +4016,7 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #FF6E05;
+  background-color: #e4aa24;
   border: 1px solid #1b4257;
   outline: 0;
 }
@@ -4027,7 +4027,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open>.btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #EC7726;
+  background-color: #ffd063;
   border-color: 1px solid #1b4257;
   outline: 0;
 }
@@ -8269,7 +8269,8 @@ content-box-head h1 {
 }
 
 .page-login {
-  background-image: url("../../build/images/default_wallpaper.jpg");
+  background: url(../../build/images/default_wallpaper.jpg) no-repeat;
+  background-size: cover;
 }
 
 .page-login .container {
@@ -8293,11 +8294,11 @@ content-box-head h1 {
 }
 
 .login-modal-container {
-  color: #FFF;
+  color: #e4aa24;
   border: none;
   max-width: 400px;
-  margin: 100px auto 0px auto;
-  background-color: #172c38;
+  margin: 250px auto 0px auto;
+  background-color: #162951;
 }
 
 .login-modal-head {
