@@ -6844,7 +6844,7 @@ div.content-box.wizard div img {
 }
 
 .page-login {
-  background: #F7F7F7;
+  background-image: url("../../build/images/default_wallpaper.jpg");
 }
 .page-login .container {
   min-height: 100%;
