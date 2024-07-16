@@ -1188,7 +1188,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #E8E8E8;
+  color: #141414;
   background-color: #fff;
 }
 
@@ -2868,7 +2868,7 @@ th {
 
 .table-hover>tbody>tr:hover>td,
 .table-hover>tbody>tr:hover>th {
-  background-color: #f5f5f5;
+  background-color: #c2c2c2;
 }
 
 table col[class*=col-] {
@@ -2896,7 +2896,7 @@ table th[class*=col-] {
 .table>tfoot>tr>th.active,
 .table>tfoot>tr.active>td,
 .table>tfoot>tr.active>th {
-  background-color: #f5f5f5;
+  background-color: #c2c2c2;
 }
 
 .table-hover>tbody>tr>td.active:hover,

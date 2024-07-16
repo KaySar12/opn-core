@@ -392,7 +392,7 @@
                     let statObj = Object.values(data)[i];
                     if (typeof domain == 'undefined' || typeof statObj == 'undefined') {
                         $('#' + id).append(
-                            '<li class="list-group-item list-group-item-border list-item-domain top-item">' +
+                            '<li class="list-group-item list-group-item-border list-item-domain top-item" style="background-color:white !important;">' +
                             (i + 1) + '. ' +
                             '<span class="counter">0 (0.0%)' +
                             '</span></li>'
@@ -415,7 +415,7 @@
 
                     let bl = statObj.hasOwnProperty('blocklist') ? '(' + statObj.blocklist + ')' : '';
                     $('#' + id).append(
-                        '<li class="list-group-item list-group-item-border list-item-domain top-item">' +
+                        '<li class="list-group-item list-group-item-border list-item-domain top-item" style="background-color:white !important;">' +
                         '<p class="group-p">' + (i + 1) + '. ' + domain + ' ' + bl + '&nbsp </p>' +
                         '<span class="counter">'+ statObj.total +' (' + statObj.pcnt +'%)' +
                         icon +
@@ -853,7 +853,7 @@
                         <div class="col-md-6">
                             <div class="top-list">
                                 <ul class="list-group list-group-wrapper" id="top">
-                                    <li class="list-group-item list-group-item-border list-item-domain">
+                                    <li class="list-group-item list-group-item-border list-item-domain" style="background-color:white !important;">
                                         <b>{{ lang._('Top passed domains') }}</b>
                                     </li>
                                 </ul>
@@ -862,7 +862,7 @@
                         <div class="col-md-6">
                             <div class="top-list">
                                 <ul class="list-group list-group-wrapper" id="top-blocked">
-                                    <li class="list-group-item list-group-item-border list-item-domain">
+                                    <li class="list-group-item list-group-item-border list-item-domain" style="background-color:white !important;">
                                         <b>{{ lang._('Top blocked domains') }}</b>
                                     </li>
                                 </ul>
