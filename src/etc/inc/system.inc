@@ -70,64 +70,64 @@ function system_sysctl_defaults()
     global $config;
 
     return [
-        'hw.ibrs_disable' => [ 'default' => '0' ],
-        'hw.ixl.enable_head_writeback' => [ 'default' => '0', 'required' => true ],
-        'hw.syscons.kbd_reboot' => [ 'default' => '0' ],
-        'hw.uart.console' => [ 'default' => 'io:0x3f8,br:' . system_console_speed(), 'type' => 't' ], /* XXX support comconsole_port if needed */
-        'kern.coredump' => [ 'default' => '0', 'required' => true ],
-        'kern.ipc.maxsockbuf' => [ 'default' => '4262144' ],
-        'kern.randompid' => [ 'default' => '1' ],
-        'net.enc.in.ipsec_bpf_mask' => [ 'default' => '2', 'required' => true ], /* after processing */
-        'net.enc.in.ipsec_filter_mask' => [ 'default' => '2', 'required' => true ], /* after processing */
-        'net.enc.out.ipsec_bpf_mask' => [ 'default' => '1', 'required' => true ], /* before processing */
-        'net.enc.out.ipsec_filter_mask' => [ 'default' => '1', 'required' => true ], /* before processing */
-        'net.inet.icmp.drop_redirect' => [ 'default' => '1', 'required' => true ],
-        'net.inet.icmp.icmplim' => [ 'default' => '0' ],
-        'net.inet.icmp.log_redirect' => [ 'default' => '0' ],
-        'net.inet.icmp.reply_from_interface' => [ 'default' => '1', 'required' => true ],
-        'net.inet.ip.accept_sourceroute' => [ 'default' => '0' ],
-        'net.inet.ip.forwarding' => [ 'default' => '1', 'required' => true ],
-        'net.inet.ip.intr_queue_maxlen' => [ 'default' => '1000', 'required' => true ],
-        'net.inet.ip.portrange.first' => [ 'default' => '1024' ],
-        'net.inet.ip.random_id' => [ 'default' => '1' ],
-        'net.inet.ip.redirect' => [ 'default' => '0' ],
-        'net.inet.ip.sourceroute' => [ 'default' => '0' ],
-        'net.inet.tcp.blackhole' => [ 'default' => '2' ],
-        'net.inet.tcp.delayed_ack' => [ 'default' => '0' ],
-        'net.inet.tcp.drop_synfin' => [ 'default' => '1' ],
-        'net.inet.tcp.log_debug' => [ 'default' => '0' ],
-        'net.inet.tcp.recvspace' => [ 'default' => '65228' ],
-        'net.inet.tcp.sendspace' => [ 'default' => '65228' ],
-        'net.inet.tcp.syncookies' => [ 'default' => '1' ],
-        'net.inet.tcp.tso' => [ 'default' => '1' ],
-        'net.inet.udp.blackhole' => [ 'default' => '1' ],
-        'net.inet.udp.checksum' => [ 'default' => 1 ],
-        'net.inet.udp.maxdgram' => [ 'default' => '57344' ],
-        'net.inet6.ip6.accept_rtadv' => [ 'default' => isset($config['system']['ipv6allow']) ? '1' : '0', 'required' => true ],
-        'net.inet6.ip6.forwarding' => [ 'default' => '1', 'required' => true ],
-        'net.inet6.ip6.intr_queue_maxlen' => [ 'default' => '1000', 'required' => true ],
-        'net.inet6.ip6.prefer_tempaddr' => [ 'default' => '0' ],
-        'net.inet6.ip6.redirect' => [ 'default' => '0' ],
-        'net.inet6.ip6.rfc6204w3' => [ 'default' => isset($config['system']['ipv6allow']) ? '1' : '0', 'required' => true ],
-        'net.inet6.ip6.use_tempaddr' => [ 'default' => '0' ],
-        'net.link.bridge.pfil_bridge' => [ 'default' => '0' ],
-        'net.link.bridge.pfil_local_phys' => [ 'default' => '0' ],
-        'net.link.bridge.pfil_member' => [ 'default' => '1' ],
-        'net.link.bridge.pfil_onlyip' => [ 'default' => '0' ],
-        'net.link.ether.inet.log_arp_movements' => [ 'default' => isset($config['system']['sharednet']) ? '0' : '1', 'required' => true ],
-        'net.link.ether.inet.log_arp_wrong_iface' => [ 'default' => isset($config['system']['sharednet']) ? '0' : '1', 'required' => true ],
-        'net.link.tap.user_open' => [ 'default' => '1' ],
-        'net.link.vlan.mtag_pcp' => [ 'default' => '1', 'required' => true ],
-        'net.local.dgram.maxdgram' => [ 'default' => '8192', 'required' => true ],
-        'net.pf.share_forward' => [ 'default' => !empty($config['system']['pf_share_forward']) ? '1' : '0', 'required' => true ],
-        'net.pf.share_forward6' => [ 'default' => !empty($config['system']['pf_share_forward']) ? '1' : '0', 'required' => true ],
-        'net.route.multipath' => [ 'default' => '0', 'required' => true ],
-        'security.bsd.see_other_gids' => [ 'default' => '0' ],
-        'security.bsd.see_other_uids' => [ 'default' => '0' ],
-        'vfs.read_max' => [ 'default' => '32' ],
-        'vfs.zfs.dirty_data_sync_percent' => [ 'default' => '5', 'required' => true ],
-        'vfs.zfs.txg.timeout' => [ 'default' => '90', 'required' => true ],
-        'vm.pmap.pti' => [ 'default' => '1' ],
+        'hw.ibrs_disable' => ['default' => '0'],
+        'hw.ixl.enable_head_writeback' => ['default' => '0', 'required' => true],
+        'hw.syscons.kbd_reboot' => ['default' => '0'],
+        'hw.uart.console' => ['default' => 'io:0x3f8,br:' . system_console_speed(), 'type' => 't'], /* XXX support comconsole_port if needed */
+        'kern.coredump' => ['default' => '0', 'required' => true],
+        'kern.ipc.maxsockbuf' => ['default' => '4262144'],
+        'kern.randompid' => ['default' => '1'],
+        'net.enc.in.ipsec_bpf_mask' => ['default' => '2', 'required' => true], /* after processing */
+        'net.enc.in.ipsec_filter_mask' => ['default' => '2', 'required' => true], /* after processing */
+        'net.enc.out.ipsec_bpf_mask' => ['default' => '1', 'required' => true], /* before processing */
+        'net.enc.out.ipsec_filter_mask' => ['default' => '1', 'required' => true], /* before processing */
+        'net.inet.icmp.drop_redirect' => ['default' => '1', 'required' => true],
+        'net.inet.icmp.icmplim' => ['default' => '0'],
+        'net.inet.icmp.log_redirect' => ['default' => '0'],
+        'net.inet.icmp.reply_from_interface' => ['default' => '1', 'required' => true],
+        'net.inet.ip.accept_sourceroute' => ['default' => '0'],
+        'net.inet.ip.forwarding' => ['default' => '1', 'required' => true],
+        'net.inet.ip.intr_queue_maxlen' => ['default' => '1000', 'required' => true],
+        'net.inet.ip.portrange.first' => ['default' => '1024'],
+        'net.inet.ip.random_id' => ['default' => '1'],
+        'net.inet.ip.redirect' => ['default' => '0'],
+        'net.inet.ip.sourceroute' => ['default' => '0'],
+        'net.inet.tcp.blackhole' => ['default' => '2'],
+        'net.inet.tcp.delayed_ack' => ['default' => '0'],
+        'net.inet.tcp.drop_synfin' => ['default' => '1'],
+        'net.inet.tcp.log_debug' => ['default' => '0'],
+        'net.inet.tcp.recvspace' => ['default' => '65228'],
+        'net.inet.tcp.sendspace' => ['default' => '65228'],
+        'net.inet.tcp.syncookies' => ['default' => '1'],
+        'net.inet.tcp.tso' => ['default' => '1'],
+        'net.inet.udp.blackhole' => ['default' => '1'],
+        'net.inet.udp.checksum' => ['default' => 1],
+        'net.inet.udp.maxdgram' => ['default' => '57344'],
+        'net.inet6.ip6.accept_rtadv' => ['default' => isset($config['system']['ipv6allow']) ? '1' : '0', 'required' => true],
+        'net.inet6.ip6.forwarding' => ['default' => '1', 'required' => true],
+        'net.inet6.ip6.intr_queue_maxlen' => ['default' => '1000', 'required' => true],
+        'net.inet6.ip6.prefer_tempaddr' => ['default' => '0'],
+        'net.inet6.ip6.redirect' => ['default' => '0'],
+        'net.inet6.ip6.rfc6204w3' => ['default' => isset($config['system']['ipv6allow']) ? '1' : '0', 'required' => true],
+        'net.inet6.ip6.use_tempaddr' => ['default' => '0'],
+        'net.link.bridge.pfil_bridge' => ['default' => '0'],
+        'net.link.bridge.pfil_local_phys' => ['default' => '0'],
+        'net.link.bridge.pfil_member' => ['default' => '1'],
+        'net.link.bridge.pfil_onlyip' => ['default' => '0'],
+        'net.link.ether.inet.log_arp_movements' => ['default' => isset($config['system']['sharednet']) ? '0' : '1', 'required' => true],
+        'net.link.ether.inet.log_arp_wrong_iface' => ['default' => isset($config['system']['sharednet']) ? '0' : '1', 'required' => true],
+        'net.link.tap.user_open' => ['default' => '1'],
+        'net.link.vlan.mtag_pcp' => ['default' => '1', 'required' => true],
+        'net.local.dgram.maxdgram' => ['default' => '8192', 'required' => true],
+        'net.pf.share_forward' => ['default' => !empty($config['system']['pf_share_forward']) ? '1' : '0', 'required' => true],
+        'net.pf.share_forward6' => ['default' => !empty($config['system']['pf_share_forward']) ? '1' : '0', 'required' => true],
+        'net.route.multipath' => ['default' => '0', 'required' => true],
+        'security.bsd.see_other_gids' => ['default' => '0'],
+        'security.bsd.see_other_uids' => ['default' => '0'],
+        'vfs.read_max' => ['default' => '32'],
+        'vfs.zfs.dirty_data_sync_percent' => ['default' => '5', 'required' => true],
+        'vfs.zfs.txg.timeout' => ['default' => '90', 'required' => true],
+        'vm.pmap.pti' => ['default' => '1'],
     ];
 }
 
@@ -566,7 +566,7 @@ function system_interface_route($gw, $routes)
         /* special case tries to turn on far gateway when required for dynamic gateway */
         $dynamicgw = trim(@file_get_contents("/tmp/{$device}_router") ?? '');
         if (!empty($dynamicgw) && $gateway === $dynamicgw) {
-            list (, $network) = interfaces_primary_address($interface);
+            list(, $network) = interfaces_primary_address($interface);
             if (!empty($network) && !ip_in_subnet($gateway, $network)) {
                 /*
                  * If we do not fail primary network detection and the local address
@@ -592,7 +592,7 @@ function system_interface_route($gw, $routes)
             continue;
         } elseif (strpos($route['gateway'], 'link#') !== 0) {
             continue;
-        /* XXX may consider "S" as well for manually assigned */
+            /* XXX may consider "S" as well for manually assigned */
         } elseif (strpos($route['flags'], 'H') === false) {
             continue;
         }
@@ -827,7 +827,7 @@ function system_syslog_reset($verbose = false)
     foreach (new RecursiveIteratorIterator($it) as $file) {
         if ($file->isFile() && strpos($file->getFilename(), '.log') > -1) {
             if (strpos($file->getFilename(), 'flowd') === false) {
-                @unlink((string)$file);
+                @unlink((string) $file);
             }
         }
     }
@@ -848,7 +848,7 @@ function get_memory()
     $physmem = get_single_sysctl("hw.physmem");
     $realmem = get_single_sysctl("hw.realmem");
     /* convert from bytes to megabytes */
-    return array(($physmem / 1048576),($realmem / 1048576));
+    return array(($physmem / 1048576), ($realmem / 1048576));
 }
 
 function system_firmware_configure($verbose = false)
@@ -866,8 +866,8 @@ function system_firmware_configure($verbose = false)
             continue;
         }
 
-         /* run the script in passthru() but avoid standard output from this side */
-         passthru($script . '> /dev/null');
+        /* run the script in passthru() but avoid standard output from this side */
+        passthru($script . '> /dev/null');
 
         /* make a note about repo being handled */
         service_log(' ' . preg_replace('/\..*?$/', '', $basename));
@@ -944,7 +944,7 @@ function system_trust_configure($verbose = false)
                     }
                     if (!empty($error_line)) {
                         syslog(LOG_NOTICE, $error_line);
-                        $ca .= "#" .  str_replace("\n", "", $error_line);
+                        $ca .= "#" . str_replace("\n", "", $error_line);
                     } else {
                         $ca .= $user_ca;
                         $ca_count += 1;
