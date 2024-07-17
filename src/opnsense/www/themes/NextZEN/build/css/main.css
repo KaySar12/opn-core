@@ -8,6 +8,8 @@
   padding-right: 1px !important;
   padding-left: 5px !important;
   min-height: 25px !important;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .widgetdiv .content-box-head .btn-group .btn {
@@ -6482,7 +6484,7 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: 7px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -6504,8 +6506,8 @@ a.list-group-item-danger.active:focus {
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .panel-heading>.dropdown .dropdown-toggle {
@@ -7999,6 +8001,7 @@ body {
 .content-box {
   background: #FFF;
   border: 1px solid #E5E5E5;
+  border-radius: 6px;
 }
 
 .content-box-main {
@@ -8179,7 +8182,7 @@ main.page-content.col-lg-12 {
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 12px;
-  border-bottom: 2px solid #FBFBFB;
+  border-bottom: 2px solid #162951;
   border-right: 1px solid #D9D9D9;
 }
 
@@ -8213,7 +8216,7 @@ main.page-content.col-lg-12 {
 
 #navigation.col-sidebar-left>div>nav>#mainmenu>div>div.collapse.in>a.list-group-item,
 #navigation.col-sidebar-left>div>nav>#mainmenu>div>div.collapse.in>div.collapse.in>a.list-group-item {
-  background-color: #fff !important;
+  background-color: #162951 !important;
 }
 
 #navigation.col-sidebar-left>div>nav>#mainmenu>div>div.collapse.in>div.collapse.in>a.list-group-item {
@@ -8481,8 +8484,7 @@ hr {
 }
 
 .list-group-item:before {
-  background: #e4aa24
-  ;
+  background: #e4aa24;
   content: "";
   height: 42px;
   min-height: 100%;
