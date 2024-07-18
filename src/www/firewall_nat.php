@@ -328,8 +328,8 @@ $( document ).ready(function() {
                     </tr>
                     <tr>
                       <th style="width:2%"><input type="checkbox" id="selectAll"></th>
-                      <th style="width:2%">&nbsp;</th>
-                      <th style="width:2%">&nbsp;</th>
+                      <th style="width:4%">&nbsp;</th>
+                      <th style="width:2%;/* margin-left:30px; */position: relative;left: -4px;"><?=gettext("Linked Rules");?></th>
                       <th><?=gettext("Interface");?></th>
                       <th><?=gettext("Proto");?></th>
                       <th class="hidden-xs hidden-sm"><?=gettext("Address");?></th>
@@ -383,7 +383,7 @@ $( document ).ready(function() {
 <?php               $nnats = 0;
                     foreach ($a_nat as $natent):
 ?>
-                    <tr class="rule <?=isset($natent['disabled'])?"text-muted":"";?>" data-category="<?=!empty($natent['category']) ? $natent['category'] : "";?>">
+                    <tr class="rule <?=isset($natent['disabled'])?"text-muted":"text-success2";?>" data-category="<?=!empty($natent['category']) ? $natent['category'] : "";?>">
                       <td>
                         <input class="rule_select" type="checkbox" name="rule[]" value="<?=$nnats;?>"  />
                       </td>
@@ -393,11 +393,19 @@ $( document ).ready(function() {
 <?php                 endif; ?>
                       </td>
                       <td>
-                        <a href="#" class="act_toggle" id="toggle_<?=$nnats;?>" data-toggle="tooltip" title="<?=(!isset($natent['disabled'])) ? gettext("Disable") : gettext("Enable");?>">
+                        <a href="#" class="act_toggle" style="display: flex;" id="toggle_<?=$nnats;?>" data-toggle="tooltip" title="<?=(!isset($natent['disabled'])) ? gettext("Disable") : gettext("Enable");?>">
 <?php                     if (!empty($natent['associated-rule-id'])): ?>
-<?php                     if(isset($natent['disabled'])):?>
+<?php                     if(isset($natent['disabled'])):?>                    
+                          <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round" style="scale:0.5"></span>
+                          </label>
                           <i class="fa fa-arrows-h fa-fw text-muted"></i>
-<?php                        else:?>
+<?php                        else:?>  
+                          <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round" style="scale:0.5"></span>
+                          </label>
                           <i class="fa fa-arrows-h fa-fw text-success"></i>
 <?php                     endif; ?>
 <?php                        elseif(isset($natent['disabled'])):?>

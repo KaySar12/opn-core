@@ -11,7 +11,7 @@
         <type>info</type>
         <help><![CDATA[Total number of entries in downloaded set.]]></help>
     </field>
-    <field>
+    <field >
         <id>alias.geoip.url</id>
         <label>Url</label>
         <type>text</type>

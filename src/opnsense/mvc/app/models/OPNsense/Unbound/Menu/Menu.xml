@@ -1,6 +1,6 @@
 <menu>
     <Services>
-        <Unbound VisibleName="Unbound DNS" cssClass="fa fa-tags fa-fw">
+        <!-- <Unbound VisibleName="Unbound DNS" cssClass="fa fa-tags fa-fw">
             <General order="10" url="/ui/unbound/general"/>
             <Overrides order="20" url="/ui/unbound/overrides"/>
             <Advanced order="30" url="/ui/unbound/advanced"/>
@@ -10,6 +10,6 @@
             <Dot VisibleName="DNS over TLS" order="70" url="/ui/unbound/dot"/>
             <Statistics order="90" url="/ui/unbound/stats"/>
             <LogFile VisibleName="Log File" order="100" url="/ui/diagnostics/log/core/resolver"/>
-        </Unbound>
+        </Unbound>-->
     </Services>
 </menu>

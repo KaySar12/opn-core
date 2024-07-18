@@ -1,6 +1,6 @@
 <menu>
     <Reporting order="15" cssClass="fa fa-area-chart">
-          <Dashboard order="0" url="/index.php" cssClass="fa fa-dashboard fa-fw">
+        <Dashboard order="0" url="/index.php" cssClass="fa fa-dashboard fa-fw">
             <Args url="/index.php*" visibility="hidden"/>
             <Root url="/" visibility="hidden"/>
             <RootArgs url="/?*" visibility="hidden"/>
@@ -29,7 +29,7 @@
             <!-- <Defaults url="/diag_defaults.php"/> -->
             <!-- <History url="/ui/core/backup/history/this"/> -->
         </Configuration>
-        <Firmware cssClass="fa fa-building-o fa-fw">
+        <!--<Firmware cssClass="fa fa-building-o fa-fw">
             <Status order="10" url="/ui/core/firmware#status"/>
             <Settings order="20" url="/ui/core/firmware#settings"/>
             <Changelog order="30" url="/ui/core/firmware#changelog"/>
@@ -38,7 +38,7 @@
             <Packages order="60" url="/ui/core/firmware#packages"/>
             <Reporter order="70" url="/crash_reporter.php"/>
             <LogFile order="80" VisibleName="Log File" url="/ui/diagnostics/log/core/pkg"/>
-        </Firmware>
+        </Firmware>-->
         <Gateways cssClass="fa fa-location-arrow fa-fw">
             <Configuration order="10" url="/ui/routing/configuration"/>
             <Group order="20" url="/system_gateway_groups.php">
@@ -125,7 +125,7 @@
         </Diagnostics>
     </Interfaces>
     <Firewall order="40" cssClass="glyphicon glyphicon-fire">
-        <Documentation order="-100" VisibleName="NextDNS"  url="http://10.0.0.1:3000/" cssClass="fa fa-shield" IsExternal="Y"/>
+        <Documentation order="-100" VisibleName="NextDNS" url="http://10.0.0.1:3000/" cssClass="fa fa-shield" IsExternal="Y"/>
         <Aliases url="/ui/firewall/alias" cssClass="fa fa-list-alt fa-fw">
             <Edit url="/ui/firewall/alias/*" visibility="hidden"/>
         </Aliases>
@@ -171,7 +171,7 @@
         <ISC_DHCPv6 VisibleName="ISC DHCPv6" cssClass="fa fa-bullseye fa-fw">
             <Leases order="400" url="/ui/dhcpv6/leases"/>
         </ISC_DHCPv6>
-        <OpenDNS VisibleName="OpenDNS" url="/services_opendns.php" cssClass="fa fa-tags fa-fw"/>
+        <!-- <OpenDNS VisibleName="OpenDNS" url="/services_opendns.php" cssClass="fa fa-tags fa-fw"/>-->
         <RouterAdv VisibleName="Router Advertisements" cssClass="fa fa-bullseye fa-fw" />
     </Services>
     <VPN order="50" cssClass="fa fa-globe">

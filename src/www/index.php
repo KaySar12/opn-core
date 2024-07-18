@@ -391,10 +391,10 @@ include("fbegin.inc");?>
                   </h3></li>
                   <li class="pull-right">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-default btn-xs disabled" id="<?= $widgetItem['name'] ?>-configure" onclick='return configureWidget("<?=  $widgetItem['name'] ?>")' style="cursor:pointer"><i class="fa fa-pencil fa-fw"></i></button>
+                     <!-- <button type="button" class="btn btn-default btn-xs disabled" id="<?= $widgetItem['name'] ?>-configure" onclick='return configureWidget("<?=  $widgetItem['name'] ?>")' style="cursor:pointer"><i class="fa fa-pencil fa-fw"></i></button>-->
                       <button type="button" class="btn btn-default btn-xs" title="minimize" id="<?= $widgetItem['name'] ?>-min" onclick='return minimizeWidget("<?= $widgetItem['name'] ?>",true)' style="display:<?= $mindiv ?>;"><i class="fa fa-minus fa-fw"></i></button>
                       <button type="button" class="btn btn-default btn-xs" title="maximize" id="<?= $widgetItem['name'] ?>-max" onclick='return showWidget("<?= $widgetItem['name'] ?>",true)' style="display:<?= $mindiv == 'none' ? 'inline' : 'none' ?>;"><i class="fa fa-plus fa-fw"></i></button>
-                      <button type="button" class="btn btn-default btn-xs" title="remove widget" onclick='return closeWidget("<?= $widgetItem['name'] ?>",true)'><i class="fa fa-remove fa-fw"></i></button>
+                    <!--  <button type="button" class="btn btn-default btn-xs" title="remove widget" onclick='return closeWidget("<?= $widgetItem['name'] ?>",true)'><i class="fa fa-remove fa-fw"></i></button>-->
                     </div>
                   </li>
                 </ul>
