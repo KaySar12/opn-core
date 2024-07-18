@@ -7989,9 +7989,8 @@ body {
 }
 
 .page-foot {
-  background: #FBFBFB;
+  background: #162951;
   bottom: 0;
-  border-top: 1px solid rgba(217, 217, 217, 0.5);
   font-size: 12px;
   padding: 20px 0;
   position: fixed;
