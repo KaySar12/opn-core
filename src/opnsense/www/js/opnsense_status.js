@@ -87,22 +87,22 @@ function parseStatus(data) {
     $.each(data, function(subject, statusObject) {
         switch (statusObject.status) {
             case "Error":
-                statusObject.icon = 'fa fa-circle text-danger'
+                statusObject.icon = ''
                 if (subject != 'System') break;
                 severity = BootstrapDialog.TYPE_DANGER;
                 break;
             case "Warning":
-                statusObject.icon = 'fa fa-circle text-warning';
+                statusObject.icon = '';
                 if (subject != 'System') break;
                 severity = BootstrapDialog.TYPE_WARNING;
                 break;
             case "Notice":
-                statusObject.icon = 'fa fa-circle text-info';
+                statusObject.icon = '';
                 if (subject != 'System') break;
                 severity = BootstrapDialog.TYPE_INFO;
                 break;
             default:
-                statusObject.icon = 'fa fa-circle text-muted';
+                statusObject.icon = '';
                 if (subject != 'System') break;
                 break;
         }
