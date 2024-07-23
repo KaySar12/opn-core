@@ -135,9 +135,13 @@ class SettingsController extends ApiMutableModelControllerBase
 
             // request list of installed rules
             $backend = new Backend();
-            $response = $backend->configdpRun("ids query rules", array($itemsPerPage,
+            $response = $backend->configdpRun("ids query rules", array(
+                $itemsPerPage,
                 ($currentPage - 1) * $itemsPerPage,
-                $searchPhrase, $sortStr));
+                $searchPhrase,
+                $sortStr
+            )
+            );
 
             $data = json_decode($response, true);
 
@@ -152,7 +156,7 @@ class SettingsController extends ApiMutableModelControllerBase
                 $result['rowCount'] = empty($result['rows']) || !is_array($result['rows']) ? 0 : count($result['rows']);
                 $result['total'] = $data['total_rows'];
                 $result['parameters'] = $data['parameters'];
-                $result['current'] = (int)$currentPage;
+                $result['current'] = (int) $currentPage;
                 return $result;
             } else {
                 return array();
@@ -175,7 +179,7 @@ class SettingsController extends ApiMutableModelControllerBase
         if (!empty($sid)) {
             $this->sessionClose();
             $backend = new Backend();
-            $response = $backend->configdpRun("ids query rules", array(1, 0,'sid/' . $sid));
+            $response = $backend->configdpRun("ids query rules", array(1, 0, 'sid/' . $sid));
             $data = json_decode($response, true);
         } else {
             $data = null;
@@ -237,8 +241,8 @@ class SettingsController extends ApiMutableModelControllerBase
         if ($data != null) {
             $data['matched_policy'] = ['__manual__'];
             foreach ($this->getModel()->policies->policy->iterateItems() as $policy) {
-                if (!empty((string)$policy->enabled) && !empty((string)$policy->description)) {
-                    $data['matched_policy'][] = (string)$policy->description;
+                if (!empty((string) $policy->enabled) && !empty((string) $policy->description)) {
+                    $data['matched_policy'][] = (string) $policy->description;
                 }
             }
             return $data;
@@ -278,11 +282,11 @@ class SettingsController extends ApiMutableModelControllerBase
                 if ($fileinfo['modified_local'] == null) {
                     $item['modified_local'] = null;
                 } else {
-                    $item['modified_local'] = date('Y/m/d G:i', (int)$fileinfo['modified_local']);
+                    $item['modified_local'] = date('Y/m/d G:i', (int) $fileinfo['modified_local']);
                 }
                 // retrieve status from model
                 $fileNode = $this->getModel()->getFileNode($fileinfo['filename']);
-                $item['enabled'] = (string)$fileNode->enabled;
+                $item['enabled'] = (string) $fileNode->enabled;
                 $result[] = $item;
             }
         }
@@ -306,8 +310,8 @@ class SettingsController extends ApiMutableModelControllerBase
             foreach ($data['properties'] as $key => $settings) {
                 $result['properties'][$key] = !empty($settings['default']) ? $settings['default'] : "";
                 foreach ($this->getModel()->fileTags->tag->iterateItems() as $tag) {
-                    if ((string)$tag->property == $key) {
-                        $result['properties'][(string)$tag->property] = (string)$tag->value;
+                    if ((string) $tag->property == $key) {
+                        $result['properties'][(string) $tag->property] = (string) $tag->value;
                     }
                 }
             }
@@ -341,7 +345,7 @@ class SettingsController extends ApiMutableModelControllerBase
                         $result['fields'][] = $key;
                         $resultTag = null;
                         foreach ($this->getModel()->fileTags->tag->iterateItems() as $tag) {
-                            if ((string)$tag->property == $key) {
+                            if ((string) $tag->property == $key) {
                                 $resultTag = $tag;
                                 break;
                             }
@@ -349,8 +353,8 @@ class SettingsController extends ApiMutableModelControllerBase
                         if ($resultTag == null) {
                             $resultTag = $this->getModel()->fileTags->tag->Add();
                         }
-                        $resultTag->property = (string)$key;
-                        $resultTag->value = (string)$value;
+                        $resultTag->property = (string) $key;
+                        $resultTag->value = (string) $value;
                     }
                 }
                 $validations = $this->getModel()->validate();
@@ -378,7 +382,7 @@ class SettingsController extends ApiMutableModelControllerBase
         usort($result['rows'], function ($item1, $item2) {
             return strcmp(strtolower($item1['description']), strtolower($item2['description']));
         });
-        $result['rowCount'] = empty($result['rows']) ? 0 :  count($result['rows']);
+        $result['rowCount'] = empty($result['rows']) ? 0 : count($result['rows']);
         $result['total'] = empty($result['rows']) ? 0 : count($result['rows']);
         $result['current'] = 1;
         return $result;
@@ -460,15 +464,15 @@ class SettingsController extends ApiMutableModelControllerBase
                 if ($data != null && array_key_exists("items", $data) && array_key_exists($filename, $data['items'])) {
                     $node = $this->getModel()->getFileNode($filename);
                     if ($enabled == "0" || $enabled == "1") {
-                        $node->enabled = (string)$enabled;
-                    } elseif ((string)$node->enabled == "1") {
+                        $node->enabled = (string) $enabled;
+                    } elseif ((string) $node->enabled == "1") {
                         $node->enabled = "0";
                     } else {
                         $node->enabled = "1";
                     }
                     // only update result state if all items until now are ok
                     if ($result['status'] != 'error') {
-                        $result['status'] = (string)$node->enabled;
+                        $result['status'] = (string) $node->enabled;
                     }
                     $update_count++;
                 } else {
@@ -623,7 +627,7 @@ class SettingsController extends ApiMutableModelControllerBase
      */
     public function delUserRuleAction($uuid)
     {
-        return  $this->delBase("userDefinedRules.rule", $uuid);
+        return $this->delBase("userDefinedRules.rule", $uuid);
     }
 
     /**
@@ -692,7 +696,7 @@ class SettingsController extends ApiMutableModelControllerBase
      */
     public function delPolicyAction($uuid)
     {
-        return  $this->delBase("policies.policy", $uuid);
+        return $this->delBase("policies.policy", $uuid);
     }
 
     /**
@@ -765,7 +769,7 @@ class SettingsController extends ApiMutableModelControllerBase
      */
     public function delPolicyRuleAction($uuid)
     {
-        return  $this->delBase("rules.rule", $uuid);
+        return $this->delBase("rules.rule", $uuid);
     }
 
     /**
@@ -794,8 +798,8 @@ class SettingsController extends ApiMutableModelControllerBase
             $result['status'] = 'warning';
             $result['message'] = sprintf(
                 gettext("We strongly advise to use policies instead of " .
-                "single rule based changes to limit the size of the configuration. " .
-                "A list of all manual changes can be revised in the policy editor (available %s here %s)"),
+                    "single rule based changes to limit the size of the configuration. " .
+                    "A list of all manual changes can be revised in the policy editor (available %s here %s)"),
                 "<a href='/ui/ids/policy#rules'>",
                 "</a>"
             );

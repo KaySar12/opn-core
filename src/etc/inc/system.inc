@@ -263,12 +263,12 @@ function get_locale_list()
     $locales['pt_PT'] = gettext('Portuguese (Portugal)');
     $locales['ru_RU'] = gettext('Russian');
     $locales['es_ES'] = gettext('Spanish');
-    $locales['tr_TR'] = gettext('Turkish');
-    $locales['vi_VN'] = gettext('Vietnamese');
+    $locales['tr_TR'] = gettext('Vietnamese');
+    // $locales['vi_VN'] = gettext('Vietnamese');
 
     if (!product::getInstance()->development()) {
         /* below 30% progress or currently unvetted */
-        unset($locales['vi_VN']);
+
     }
 
     return $locales;
