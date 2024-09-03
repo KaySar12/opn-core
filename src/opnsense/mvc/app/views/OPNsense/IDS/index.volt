@@ -37,6 +37,12 @@ POSSIBILITY OF SUCH DAMAGE.
 	.ids-alert-info > tbody > tr > td:first-child {
 		width: 150px;
 	}
+    .disable-link{
+         color: currentColor;
+         cursor: not-allowed;
+         opacity: 0.5;
+         text-decoration: none;
+    }
 	@media(min-width: 768px) {
 		.suricata-alert > .modal-dialog {
 			width: 90%;
@@ -172,13 +178,13 @@ $('.selectpicker').selectpicker('refresh');
 
 
 /**
-         * toggle selected items
-         * @param gridId: grid id to to use
-         * @param url: ajax action to call
-         * @param state: 0/1/undefined
-         * @param combine: number of keys to combine (separate with ,)
-         *                 try to avoid too much items per call (results in too long url's)
-         */
+* toggle selected items
+* @param gridId: grid id to to use
+* @param url: ajax action to call
+ * @param state: 0/1/undefined
+* @param combine: number of keys to combine (separate with ,)
+ *                 try to avoid too much items per call (results in too long url's)
+*/
 function actionToggleSelected(gridId, url, state, combine) {
 var defer_toggle = $.Deferred();
 var rows = $("#" + gridId).bootgrid('getSelectedRows');
@@ -252,11 +258,18 @@ debugger;
 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit bootgrid-tooltip\" data-row-id=\"" + row.filename + "\"><span class=\"fa fa-pencil fa-fw\"></span></button>";
 },
 boolean: function (column, row) {
-debugger;
 if (parseInt(row[column.id], 2) == 1) {
 return "<span class=\"fa fa-check fa-fw command-boolean\" data-value=\"1\" data-row-id=\"" + row.filename + "\"></span>";
 } else {
 return "<span class=\"fa fa-times fa-fw command-boolean\" data-value=\"0\" data-row-id=\"" + row.filename + "\"></span>";
+}
+},
+string: function (column, row) {
+    debugger;
+if (row["documentation_url"]) {
+return `<a href="${row["documentation_url"]}" target="_blank" style="margin-left:1rem"><span class="fa fa-info-circle fa-fw"  data-row-id=${row.filename} +></span><a/>`;
+} else {
+return `<a href="#" class="disable-link"style="margin-left:1rem"><span class="fa fa-info-circle fa-fw"  data-row-id=${row.filename} +></span><a/>`;
 }
 }
 },
@@ -440,7 +453,8 @@ infos: "{{ lang._('Showing %s to %s') | format('{{ ctx.start }}','{{ ctx.end }}'
                             converters: {
                                 // convert interface to name
                                 interface: {
-                                    from: function (value) { return value; },
+                                    from: function (value) {
+                                         return value; },
                                     to: function (value) {
                                       if (value == null || typeof value !== 'string') {
                                           return "";
@@ -789,10 +803,10 @@ infos: "{{ lang._('Showing %s to %s') | format('{{ ctx.start }}','{{ ctx.end }}'
 																<thead>
 																	<tr>
 																		<th data-column-id="filename" data-type="string" data-visible="false" data-identifier="true">{{ lang._('Filename') }}</th>
-																		<th data-column-id="description" data-type="string" data-sortable="false" data-visible="true">{{ lang._('Description') }}</th>
+                                                                        <th data-column-id="description" data-type="string" data-sortable="false" data-visible="true">{{ lang._('Description') }}</th>
 																		<th data-column-id="modified_local" data-type="rulets" data-sortable="false" data-visible="true">{{ lang._('Last updated') }}</th>
-																		<th data-column-id="source" data-type="string" data-sortable="false" data-visible="true">{{ lang._('Sources') }}</th>
 																		<th data-column-id="enabled" data-formatter="boolean" data-sortable="false" data-width="10em">{{ lang._('Enabled') }}</th>
+                                                                        <th data-column-id="linkdoc" data-formatter="string" data-sortable="false" data-width="10em">{{ lang._('Source') }}</th>
 																		<th data-column-id="edit" data-formatter="editor" data-sortable="false" data-width="10em">{{ lang._('Edit') }}</th>
 																	</tr>
 																</thead>

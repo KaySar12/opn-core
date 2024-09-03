@@ -10,9 +10,9 @@
         <label>Filename</label>
         <type>info</type>
     </field>
-    <field>
+   <!-- <field>
         <id>documentation</id>
         <label>Source</label>
         <type>info</type>
-    </field>
+    </field> -->
 </form>
