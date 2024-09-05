@@ -47,7 +47,7 @@ transition-check {
     border: none !important;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
     background-color: #fff;
-    box-shadow: 6px 0px 4px rgb(96 115 143 / 10%) !important
+    box-shadow: 6px 0px 4px rgb(96 115 143 / 25%) !important;
 }
 
 .widget-error {

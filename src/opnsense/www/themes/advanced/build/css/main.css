@@ -7962,7 +7962,7 @@ body {
 
 .page-head .navbar-brand:hover,
 .page-head .navbar-brand:focus {
-    background: #3498db
+    background: #263238;
 }
 
 
@@ -8035,7 +8035,7 @@ body {
 .page-content-main {
     min-height: calc(100% - 64px);
     padding: 15px 0 73px;
-    background: #f4f4f4
+    background: #ECF4F7
 }
 
 .page-side {
