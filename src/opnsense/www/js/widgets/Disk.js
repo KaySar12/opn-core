@@ -74,7 +74,7 @@ export default class Disk extends BaseGaugeWidget {
 
     async onMarkupRendered() {
         super.createGaugeChart({
-            colorMap: ['#D94F00', '#E5E5E5'],
+            colorMap: ['#1F77B4', '#E5E5E5'],
             labels: [this.translations.used, this.translations.free],
             tooltipLabelCallback: (tooltipItem) => {
                 let pct = tooltipItem.dataset.pct[tooltipItem.dataIndex];

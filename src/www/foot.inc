@@ -3,12 +3,12 @@
 $product = product::getInstance();
 
 ?>
-      <footer class="page-foot">
+      <!-- <footer class="page-foot">
         <div class="container-fluid">
           <a target="_blank" href="<?= $product->website() ?>"><?= $product->name() ?></a> (c) <?= $product->copyright_years() ?>
           <a target="_blank" href="<?= $product->copyright_url() ?>"><?= $product->copyright_owner() ?></a>
         </div>
-      </footer>
+      </footer> -->
 
   </div>
   <!-- /row-->

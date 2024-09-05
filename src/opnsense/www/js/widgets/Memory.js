@@ -32,7 +32,7 @@ export default class Memory extends BaseGaugeWidget {
     }
 
     async onMarkupRendered() {
-        let colorMap = ['#D94F00', '#A8C49B', '#E5E5E5'];
+        let colorMap = ['#1F77B4', '#A8C49B', '#E5E5E5'];
 
         super.createGaugeChart({
             colorMap: colorMap,

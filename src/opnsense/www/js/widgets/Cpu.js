@@ -53,7 +53,7 @@ export default class Cpu extends BaseWidget {
         smoothie.streamTo(document.getElementById(selector), 1000);
         smoothie.addTimeSeries(timeSeries, {
             lineWidth: 3,
-            strokeStyle: '#d94f00'
+            strokeStyle: '#1F77B4'
         });
     }
 

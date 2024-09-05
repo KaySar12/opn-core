@@ -241,7 +241,7 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <button class="toggle-sidebar" data-toggle="tooltip right" title="{{ lang._('Toggle sidebar') }}" style="display:none;"><i class="fa fa-chevron-left"></i></button>
+       <!--  <button class="toggle-sidebar" data-toggle="tooltip right" title="{{ lang._('Toggle sidebar') }}" style="display:none;"><i class="fa fa-chevron-left"></i></button> -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li id="menu_messages">
@@ -291,12 +291,12 @@
           </div>
         </section>
         <!-- page footer -->
-        <footer class="page-foot">
+       <!--  <footer class="page-foot">
           <div class="container-fluid">
             <a target="_blank" href="{{ product_website }}">{{ product_name }}</a> (c) {{ product_copyright_years }}
             <a target="_blank" href="{{ product_copyright_url }}">{{ product_copyright_owner }}</a>
           </div>
-        </footer>
+        </footer> -->
       </div>
     </main>
 
