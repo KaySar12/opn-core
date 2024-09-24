@@ -258,7 +258,11 @@ POSSIBILITY OF SUCH DAMAGE.
                                 } else {
                                     return "<span class=\"fa fa-times fa-fw command-boolean\" data-value=\"0\" data-row-id=\"" + row.filename + "\"></span>";
                                 }
-                            }
+                            },
+                            info: function (column, row) {
+                            var link = row.documentation_url;
+                            return "<a href=\"" + link + "\" target=\"_blank\" class=\"btn btn-xs btn-default command-info bootgrid-tooltip\" data-row-id=\"" + row.filename + "\"><span class=\"fa fa-info-circle fa-fw\"></span></a>";
+                            },
                         },
                         converters: {
                             // show "not installed" for rules without timestamp (not on disc)
@@ -772,6 +776,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             <th data-column-id="modified_local" data-type="rulets" data-sortable="false" data-visible="true">{{ lang._('Last updated') }}</th>
                             <th data-column-id="enabled" data-formatter="boolean" data-sortable="false" data-width="10em">{{ lang._('Enabled') }}</th>
                             <th data-column-id="edit" data-formatter="editor" data-sortable="false" data-width="10em">{{ lang._('Edit') }}</th>
+                            <th data-column-id="info" data-formatter="info" data-sortable="false" data-width="10em">{{ lang._('Info') }}</th>
                         </tr>
                         </thead>
                         <tbody>
