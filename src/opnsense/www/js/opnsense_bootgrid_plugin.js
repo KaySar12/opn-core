@@ -254,7 +254,7 @@ $.fn.UIBootgrid = function (params) {
                     let selected_element = $(entry).find(selector).first();
                     if (selected_element.length > 0) {
                         if ((selected_element.data("value") == "0") !== inverted ) {
-                            $(entry).addClass("text-muted");
+                            $(entry).addClass("");
                         }
                     }
                 });
