@@ -92,41 +92,44 @@ class SystemController extends ApiControllerBase
         $config = Config::getInstance()->object();
         $backend = new Backend();
 
+        // Product information
         $product = json_decode($backend->configdRun('firmware product'), true);
-        $current = explode('_', $product['product_version'])[0];
-        /* information from changelog, more accurate for production release */
-        $from_changelog = strpos($product['product_id'], '-devel') === false &&
-            !empty($product['product_latest']) &&
-            $product['product_latest'] != $current;
+        // $current = explode('_', $product['product_version'])[0];
+        // /* information from changelog, more accurate for production release */
+        // $from_changelog = strpos($product['product_id'], '-devel') === false &&
+        //     !empty($product['product_latest']) &&
+        //     $product['product_latest'] != $current;
 
-        /* update status from last check, also includes major releases */
-        $from_check = !empty($product['product_check']['upgrade_sets']) ||
-            !empty($product['product_check']['downgrade_packages']) ||
-            !empty($product['product_check']['new_packages']) ||
-            !empty($product['product_check']['reinstall_packages']) ||
-            !empty($product['product_check']['remove_packages']) ||
-            !empty($product['product_check']['upgrade_packages']);
+        // /* update status from last check, also includes major releases */
+        // $from_check = !empty($product['product_check']['upgrade_sets']) ||
+        //     !empty($product['product_check']['downgrade_packages']) ||
+        //     !empty($product['product_check']['new_packages']) ||
+        //     !empty($product['product_check']['reinstall_packages']) ||
+        //     !empty($product['product_check']['remove_packages']) ||
+        //     !empty($product['product_check']['upgrade_packages']);
 
-        $versions = [
-            sprintf('%s %s-%s', $product['product_name'], $product['product_version'], $product['product_arch']),
-            php_uname('s') . ' ' . php_uname('r'),
-            trim($backend->configdRun('system openssl version')),
-        ];
+        // $versions = [
+        //     sprintf('%s %s-%s', $product['product_name'], $product['product_version'], $product['product_arch']),
+        //     php_uname('s') . ' ' . php_uname('r'),
+        //     trim($backend->configdRun('system openssl version')),
+        // ];
 
-        if (!empty($product['product_license']['valid_to'])) {
-            $versions[] = sprintf(gettext('Licensed until %s'), $product['product_license']['valid_to']);
-        }
+        // if (!empty($product['product_license']['valid_to'])) {
+        //     $versions[] = sprintf(gettext('Licensed until %s'), $product['product_license']['valid_to']);
+        // }
 
         $response = [
             'name' => $config->system->hostname . '.' . $config->system->domain,
-            'versions' => $versions,
-            'updates' => ($from_changelog || $from_check)
-                ? gettext('Click to view pending updates.')
-                : gettext('Click to check for updates.'),
+            // You can add any other relevant data here if needed
+            // 'versions' => $versions,
+            // 'updates' => ($from_changelog || $from_check)
+            //     ? gettext('Click to view pending updates.')
+            //     : gettext('Click to check for updates.'),
         ];
 
         return $response;
     }
+
 
     public function systemTimeAction()
     {

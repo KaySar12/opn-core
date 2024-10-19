@@ -18,8 +18,8 @@
         <translations>
             <title>System Information</title>
             <name>Name</name>
-            <versions>Versions</versions>
-            <updates>Updates</updates>
+            <!-- <versions>Versions</versions>
+            <updates>Updates</updates> -->
             <datetime>Current date/time</datetime>
             <loadavg>Load average</loadavg>
             <uptime>Uptime</uptime>
