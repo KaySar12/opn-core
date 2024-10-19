@@ -182,7 +182,7 @@
             <loss>Loss</loss>
         </translations>
     </gateways>
-    <thermalsensors>
+    <!-- <thermalsensors>
         <filename>ThermalSensors.js</filename>
         <endpoints>
             <endpoint>/api/diagnostics/system/systemTemperature</endpoint>
@@ -192,7 +192,7 @@
             <help>CPU thermal sensors often measure the same temperature for each CPU.</help>
             <unconfigured>Thermal sensors not available or not configured.</unconfigured>
         </translations>
-    </thermalsensors>
+    </thermalsensors> -->
     <monit>
         <filename>Monit.js</filename>
         <endpoints>
