@@ -8146,7 +8146,8 @@ div.content-box.wizard div img {
 }
 
 .page-login {
-    background: url(../../build/images/default-background.jpg) no-repeat;
+    background-color: #ECF4F7;
+    /* background: url(../../build/images/default-background.jpg) no-repeat; */
 
 }
 
@@ -8172,12 +8173,14 @@ div.content-box.wizard div img {
     color: #e4aa24;
     border: none;
     max-width: 400px;
-    background-color: #263238;
+    background-color: #ffffff;
+    /* background-color: #263238; */
 }
 
 
 .login-modal-head {
-    background: #263238;
+    /* background: #263238; */
+    background: #ffffff;
     height: 75px;
     padding: 0 20px;
 }
