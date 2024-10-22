@@ -1,5 +1,5 @@
 <metadata>
-    <announcements>
+    <!-- <announcements>
         <filename>Announcements.js</filename>
         <endpoints>
             <endpoint>/api/core/dashboard/product_info_feed</endpoint>
@@ -8,7 +8,7 @@
             <title>Announcements</title>
             <no_feed>Unable to contact information feed.</no_feed>
         </translations>
-    </announcements>
+    </announcements> -->
     <systeminformation>
         <filename>SystemInformation.js</filename>
         <endpoints>

@@ -120,6 +120,7 @@ class WidgetManager  {
     }
 
     async _loadWidgets() {
+        debugger;
         const response = await $.ajax('/api/core/dashboard/getDashboard', {
             type: 'GET',
             dataType: 'json',
@@ -151,6 +152,7 @@ class WidgetManager  {
     }
 
     _initializeWidgets() {
+        debugger;
         if ($.isEmptyObject(this.loadedModules)) {
             throw new Error('No widgets loaded');
         }
